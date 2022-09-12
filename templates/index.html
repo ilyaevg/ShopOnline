@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    <title>Онлайн магазин</title>
+{% endblock %}
+
+{% block body %}
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+              <h1 class="display-4 fw-normal">Онлайн магазин</h1>
+              <p class="fs-5 text-muted">Более 150 000 товаров по низким ценам: бытовая техника, электроника, детские товары, оборудование, электроинструмент, садовая техника и крепёж.</p>
+        </div>
+
+
+   <div class="card-deck mb-3 text-center">
+     {% for el in data %}
+       <main>
+       <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">{{ el.title }}</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">{{ el.price }}<small class="text-muted fw-light">BYN</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Описание</li>
+                  <li>2 GB of storage</li>
+                  <li>Email support</li>
+                  <li>Help center access</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Купить товар</button>
+              </div>
+            </div>
+          </div>
+       </div>
+     {% endfor %}
+
+
+         <div class="container-fluid pt-5">
+          <div class="row px-xl-5 pb-3">
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                    <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
+                    <h5 class="font-weight-semi-bold m-0">Качественные товары</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                    <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
+                    <h5 class="font-weight-semi-bold m-0">Бесплатная доставка</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                    <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
+                    <h5 class="font-weight-semi-bold m-0">14-дневный возврат</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                    <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
+                    <h5 class="font-weight-semi-bold m-0">Круглосуточная поддержка</h5>
+                </div>
+            </div>
+          </div>
+         </div>
+       </main>
+   </div>
+{% endblock %}
